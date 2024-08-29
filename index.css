@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+  color: var(--default-color);
+}
+
+:root {
+  /* FONT FAMILY */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* COLOR */
+  --default-color: #000;
+  --first-color: #2368ff;
+  --press-first-color: #1949ae;
+  --second-color: #06a769;
+  --third-color: #ff5137;
+  --semi-white: #f9f9fb;
+  --white: #fff;
+  /* LETTER SIZE */
+  --title-size: 30px;
+  --text-size: 18px;
+  /* GAP */
+  --default-space: 10px;
+}
+
+body {
+  background-color: var(--semi-white);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  > .title {
+    font-size: var(--title-size);
+  }
+
+  > .task-form {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: var(--default-space);
+    font-size: var(--text-size);
+
+    > .task-form__text-field,
+    .task-form__button {
+      height: 30px;
+      border-radius: 4px;
+      border: 0;
+    }
+
+    > .task-form__text-field {
+      width: 200px;
+      outline: none;
+      padding-left: var(--default-space);
+      border: 1px solid var(--default-color);
+
+      &:focus {
+        border: 1px solid var(--first-color);
+      }
+    }
+
+    > .task-form__button {
+      background-color: var(--first-color);
+      padding: 0 var(--default-space);
+      color: var(--white);
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: var(--press-first-color);
+      }
+    }
+  }
+}
+
+.task-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.task {
+  background-color: #06a769;
+}
