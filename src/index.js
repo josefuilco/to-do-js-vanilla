@@ -5,7 +5,7 @@ $app.innerHTML = `
 	<h1 class="title">Lista de Tareas</h1>
 	<form class="task-form">
 		<input type="text" placeholder="Escribe la tarea" class="task-form__text-field" />
-		<button type="submit" class="task-form__button">
+		<button type="submit" id="bn1" class="task-form__button">
 			+ Nueva Tarea
 		</button>
 	</form>
@@ -29,5 +29,12 @@ $app.addEventListener('click', (event) => {
 		event.preventDefault()
 		const $inputText = $form.querySelector('.task-form__text-field')
 		console.log($inputText.value)
+
+		const taskName = $inputText.value.trim()
+		if (taskName == ''){
+			console.log("Por favor ingrese un nombre para la tarea nueva.")
+		}
+
+		
 	})
 })
